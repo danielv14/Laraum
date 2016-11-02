@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Post;
 
+use App\User;
+
 class PagesController extends Controller
 {
     public function index()
@@ -24,5 +26,11 @@ class PagesController extends Controller
     {
         $post = Post::where('slug', $slug)->first();
         return view('pages.post', compact('post'));
+    }
+
+    public function user($id)
+    {
+      $user = User::findOrFail($id);
+      return view('pages.user', compact('user'));
     }
 }
