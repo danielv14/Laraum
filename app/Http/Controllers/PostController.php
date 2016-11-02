@@ -57,10 +57,10 @@ class PostController extends Controller
         ]);
 
         // create new Post
-        $post = new Post;
-        $post->title = $request->title;
-        $post->body = $request->body;
-        $post->slug = str_slug($request->title, '-');
+        $post = new Post([
+          'title' => $request->title,
+          'body' => $request->body
+        ]);
 
         // save the post to authenticated user
         Auth::user()->posts()->save($post);
@@ -88,7 +88,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -100,7 +101,17 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $this->validate($request, [
+        'title' => 'required|max:255',
+        'body' => 'required',
+      ]);
+
+      $post = Post::findOrFail($id);
+      $post->user()
+        ->associate(Auth::user()->id)
+        ->update($request->all());
+
+      return redirect('/home');
     }
 
     /**
@@ -111,6 +122,7 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->delete();
     }
 }
