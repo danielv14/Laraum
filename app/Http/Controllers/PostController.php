@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
 
 use Auth;
 
@@ -22,17 +23,6 @@ class PostController extends Controller
     }
 
 
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -49,13 +39,8 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        $this->validate($request, [
-          'title' => 'required|max:255',
-          'body' => 'required',
-        ]);
-
         // create new Post
         $post = new Post([
           'title' => $request->title,
@@ -99,12 +84,8 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PostRequest $request, $id)
     {
-      $this->validate($request, [
-        'title' => 'required|max:255',
-        'body' => 'required',
-      ]);
 
       $post = Post::findOrFail($id);
       $post->user()
