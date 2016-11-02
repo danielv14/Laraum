@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@index');
+Route::get('/post/{slug}', 'PagesController@show')->name('page.show');
 
 Auth::routes();
 
