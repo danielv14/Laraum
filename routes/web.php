@@ -25,7 +25,9 @@ Route::get('/home', 'HomeController@index');
 Route::group(['prefix' => 'profile'], function() {
 
   // CRUD Post
-  Route::resource('post', 'PostController');
+  Route::resource('post', 'PostController', [
+    'except' => ['index']
+  ]);
 
 
 });
