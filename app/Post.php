@@ -12,7 +12,7 @@ class Post extends Model
     * @var array
     */
     protected $fillable = [
-      'id', 'title', 'likes'
+      'id', 'title', 'likes', 'body'
     ];
 
     /**
@@ -20,9 +20,8 @@ class Post extends Model
     *
     * @var array
     */
-    protected $guarde = [
-      'user_id',
-      'slug'
+    protected $guarded = [
+      'user_id', 'slug'
     ];
 
     /**

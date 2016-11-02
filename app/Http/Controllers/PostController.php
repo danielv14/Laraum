@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Post;
+
 class PostController extends Controller
 {
 
@@ -36,7 +40,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -47,7 +51,21 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+          'title' => 'required|max:255',
+          'body' => 'required',
+        ]);
+
+        // create new Post
+        $post = new Post;
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->slug = str_slug($request->title, '-');
+
+        // save the post to authenticated user
+        Auth::user()->posts()->save($post);
+
+        return redirect('/home');
     }
 
     /**
@@ -58,7 +76,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        return view('posts.show', compact('post'));
     }
 
     /**

@@ -18,3 +18,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+/*
+* Group up routes for profile CRUD and such
+*/
+Route::group(['prefix' => 'profile'], function() {
+
+  // CRUD Post
+  Route::resource('post', 'PostController');
+
+
+});
