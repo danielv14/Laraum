@@ -20,9 +20,9 @@ class PagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function post($slug)
     {
         $post = Post::where('slug', $slug)->first();
-        return view('pages.show', compact('post'));
+        return view('pages.post', compact('post'));
     }
 }

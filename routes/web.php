@@ -2,6 +2,7 @@
 
 Route::get('/', 'PagesController@index');
 Route::get('/post/{slug}', 'PagesController@show')->name('page.show');
+Route::get('/post/{slug}', 'PagesController@post')->name('pages.post');
 
 Auth::routes();
 
