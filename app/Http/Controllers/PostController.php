@@ -50,7 +50,7 @@ class PostController extends Controller
         // save the post to authenticated user
         Auth::user()->posts()->save($post);
 
-        return redirect('/home');
+        return redirect('/');
     }
 
     /**
@@ -92,7 +92,7 @@ class PostController extends Controller
         ->associate(Auth::user()->id)
         ->update($request->all());
 
-      return redirect('/home');
+      return redirect('/');
     }
 
     /**
