@@ -9,7 +9,7 @@
     <h2>All posts by user</h2>
     @foreach ($user->posts as $post)
       <h3><a href="{{route('pages.post', $post->slug)}}">{{$post->title}}</a></h3>
-      <p>{{$post->body}}</p>
+      {!! Markdown::convertToHtml($post->body) !!}
     @endforeach
 
   </div>
