@@ -41,6 +41,7 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
+
         // create new Post
         $post = new Post([
           'title' => $request->title,
