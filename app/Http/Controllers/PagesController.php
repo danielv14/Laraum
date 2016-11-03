@@ -12,7 +12,7 @@ class PagesController extends Controller
 {
     public function index()
     {
-      $posts = Post::all();
+      $posts = Post::orderBy('created_at', 'desc')->get();
       return view('pages.index', compact('posts'));
     }
 
