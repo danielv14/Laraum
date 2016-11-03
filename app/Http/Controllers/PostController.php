@@ -75,7 +75,13 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::findOrFail($id);
-        return view('posts.edit', compact('post'));
+
+        if ($post->isOwner(Auth::user())) {
+          return view('posts.edit', compact('post'));
+        } else {
+          return redirect('/');
+        }
+
     }
 
     /**
@@ -89,11 +95,16 @@ class PostController extends Controller
     {
 
       $post = Post::findOrFail($id);
-      $post->user()
-        ->associate(Auth::user()->id)
-        ->update($request->all());
 
-      return redirect('/');
+      if ($post->isOwner(Auth::user())) {
+        $post->user()
+          ->associate(Auth::user()->id)
+          ->update($request->all());
+        return redirect('/');
+      } else {
+        return redirect('/');
+      }
+
     }
 
     /**
@@ -105,6 +116,12 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
-        $post->delete();
+        if ($post->isOwner(Auth::user())) {
+          $post->delete();
+          return redirect('/');
+        } else {
+          return redirect('/');
+        }
+
     }
 }

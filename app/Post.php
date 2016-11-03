@@ -50,4 +50,12 @@ class Post extends Model
     {
       return $this->belongsTo('App\User');
     }
+
+    /**
+    * Check if user is the owner
+    */
+    public function isOwner($user)
+    {
+      return $this->user_id == $user->id;
+    }
 }
