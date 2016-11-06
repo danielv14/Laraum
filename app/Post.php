@@ -58,4 +58,13 @@ class Post extends Model
     {
       return $this->user_id == $user->id;
     }
+
+    /**
+    * Return all posts attached to a user
+    * also sort by latest
+    */
+    public function scopeCurrentUser($query, $id)
+    {
+      return $query->where('user_id', $id)->orderBy('created_at', 'desc');
+    }
 }
