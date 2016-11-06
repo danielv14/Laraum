@@ -9,7 +9,7 @@
   {!! Form::label('body', 'Write the post body') !!}
   {!! Form::textarea('body', null, [
     'class' => 'form-control',
-    'rows' => '15',
+    'rows' => '20',
     'data-provide' => 'markdown'
     ]) !!}
 </div>
