@@ -4,8 +4,12 @@
 // Utilities
 @import "2-utils/module";
 
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// Bootstrap imports needed for bootstrap markdown
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_buttons";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups";
+
 
 // Bootstrap dependant lib-file Markdown library
 @import "1-libs/bootstrap-markdown";
