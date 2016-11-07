@@ -4,7 +4,7 @@
 
   <div class="container">
     <div class="columns">
-      <div class="column is-2">
+      <div class="column is-3">
         <h2 class="title">My profile</h2>
         <h4 class="subtitle">{{ $posts->count() }} posts</h4>
         <a class="button" href="{{ url('/logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
@@ -14,7 +14,7 @@
             {{ csrf_field() }}
         </form>
       </div>
-      <div class="column is-10">
+      <div class="column is-9">
         <div class="">
           @if ($posts->count() != 0)
             @foreach ($posts as $post)
