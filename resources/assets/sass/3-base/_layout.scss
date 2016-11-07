@@ -1,3 +1,14 @@
+.content {
+  a {
+    color: $brand-color !important;
+    text-decoration: none !important;
+  }
+}
+
+
+.section:first-of-type {
+  padding-top: 0px;
+}
 
 .box {
   background-color: white;

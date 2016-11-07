@@ -12,20 +12,21 @@
         </div>
       </div>
       <div class="column is-10">
-        <div class="content post-content">
           @foreach ($user->posts as $post)
-            <h3 class="post-content">{{ $post->title }}</h3>
-            {!! str_limit(
-              Markdown::convertToHtml($post->body),
-              $limit = 450,
-              $end = '...'
-            ) !!}
-            <br>
-            <br>
-            <a class="button" href="{{route('pages.post', $post->slug)}}">Read more</a>
-
+            <div class="section">
+              <h2 class="title">{{ $post->title }}</h2>
+              <h4 class="subtitle">{{$post->created_at->diffForHumans()}}</h4>
+              {!! str_limit(
+                Markdown::convertToHtml($post->body),
+                $limit = 450,
+                $end = '...'
+              ) !!}
+              <br>
+              <br>
+              <a class="button" href="{{route('pages.post', $post->slug)}}">Read more</a>
+            </div>
           @endforeach
-        </div>
+
 
       </div>
     </div>

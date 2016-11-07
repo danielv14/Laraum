@@ -15,18 +15,21 @@
         </form>
       </div>
       <div class="column is-10">
-        <div class="content post-content">
+        <div class="">
           @if ($posts->count() != 0)
             @foreach ($posts as $post)
-              <h3 class="post-content">{{ $post->title }}</h3>
-              {!! str_limit(
-                Markdown::convertToHtml($post->body),
-                $limit = 450,
-                $end = '...'
-              ) !!}
-              <br>
-              <br>
-              <a class="button" href="{{route('post.show', $post->id)}}">View post</a>
+              <div class="section">
+                <h2 class="title">{{ $post->title }}</h2>
+                {!! str_limit(
+                  Markdown::convertToHtml($post->body),
+                  $limit = 450,
+                  $end = '...'
+                ) !!}
+                <br>
+                <br>
+                <a class="button" href="{{route('post.show', $post->id)}}">View post</a>
+              </div>
+
             @endforeach
           @else
             <p>You have not written any posts yet</p>

@@ -613,24 +613,35 @@ h1, h2, h3, h4, h5, h6 {
 p {
   font-family: 'Open Sans', sans-serif; }
 
+h1, h2, h3, h4, h5, h6, p {
+  font-size: 1.2em;
+  line-height: 2.3rem; }
+
 .subtle-button {
   color: gray; }
+
+.content a {
+  color: #22D0B2 !important;
+  text-decoration: none !important; }
+
+.section:first-of-type {
+  padding-top: 0px; }
 
 .box {
   background-color: white;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(0, 0, 0, 0.09); }
 
-.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6, .post-content p {
-  font-size: 1.4em;
-  line-height: 2.3rem; }
+.nav {
+  padding-top: 10px;
+  padding-bottom: 10px; }
 
 @media screen and (max-width: 980px) {
   .logo {
     padding-left: 10px !important; } }
 
 .footer.is-custom {
-  background-color: #efefef; }
+  background-color: #F5F5F5; }
 
 .hero-title {
   font-size: 3rem; }
