@@ -1,10 +1,20 @@
+// Libs
+@import "1-libs/module";
 
-// Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
-
-// Variables
-@import "variables";
+// Utilities
+@import "2-utils/module";
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-@import "bootstrap-markdown";
+
+// Bootstrap dependant lib-file Markdown library
+@import "1-libs/bootstrap-markdown";
+
+// Base
+@import "3-base/module";
+
+// Components
+@import "4-components/module";
+
+// Pages
+@import "5-pages/module";
