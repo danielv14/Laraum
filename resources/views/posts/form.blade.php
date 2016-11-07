@@ -1,7 +1,7 @@
 <div class="form-group">
   {!! Form::label('title', 'Title of the post') !!}
   {!! Form::text('title', null, [
-    'class' => 'input'
+    'class' => 'input is-medium'
     ]) !!}
 </div>
 <br>
