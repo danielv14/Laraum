@@ -4,14 +4,15 @@
 
   <div class="container">
     <div class="columns">
-      <div class="column is-3">
+
+      <div class="column is-2">
         <div class="content">
           <h2 class="title">{{$user->name}}'s profile</h2>
           <h4 class="subtitle">{{$user->posts->count()}} Posts</h4>
-
         </div>
       </div>
-      <div class="column is-9">
+
+      <div class="column is-10">
           @foreach ($user->posts as $post)
             <div class="section">
               <h2 class="title">{{ $post->title }}</h2>
