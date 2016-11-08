@@ -16,9 +16,6 @@
               <div class="section">
                 <h2 class="title">
                   {{ $post->title }}
-                  @if ($post->draft == true)
-                    <span class="tag is-light is-medium">Draft</span>
-                  @endif
                 </h2>
                 {!! str_limit(
                   Markdown::convertToHtml($post->body),

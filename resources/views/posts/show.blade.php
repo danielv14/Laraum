@@ -18,7 +18,12 @@
 
     <div class="column is-10">
       <div class="content post-content">
-        <h1>{{$post->title}}</h1>
+        <h1>
+          {{$post->title}}
+          @if ($post->draft == true)
+            <span class="tag is-light is-medium">Draft</span>
+          @endif
+        </h1>
         {!! Markdown::convertToHtml($post->body) !!}
       </div>
     </div>
