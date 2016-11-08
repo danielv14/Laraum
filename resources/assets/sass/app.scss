@@ -1,10 +1,24 @@
+// Libs
+@import "1-libs/module";
 
-// Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+// Utilities
+@import "2-utils/module";
 
-// Variables
-@import "variables";
+// Bootstrap imports needed for bootstrap markdown
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_buttons";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups";
 
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-@import "bootstrap-markdown";
+
+// Bootstrap dependant lib-file Markdown library
+@import "1-libs/bootstrap-markdown";
+
+// Base
+@import "3-base/module";
+
+// Components
+@import "4-components/module";
+
+// Pages
+@import "5-pages/module";

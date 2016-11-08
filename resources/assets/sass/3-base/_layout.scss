@@ -1,0 +1,17 @@
+.content {
+  a {
+    color: $brand-color !important;
+    text-decoration: none !important;
+  }
+}
+
+
+.section:first-of-type {
+  padding-top: 0px;
+}
+
+.box {
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  border: 1px solid rgba(0,0,0,.09);
+}

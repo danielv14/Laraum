@@ -1,22 +1,21 @@
 <div class="form-group">
   {!! Form::label('title', 'Title of the post') !!}
   {!! Form::text('title', null, [
-    'class' => 'form-control'
+    'class' => 'input is-medium'
     ]) !!}
 </div>
-
+<br>
 <div class="form-group">
   {!! Form::label('body', 'Write the post body') !!}
   {!! Form::textarea('body', null, [
-    'class' => 'form-control',
-    'rows' => '20',
-    'data-provide' => 'markdown'
+    'class' => '',
+    'rows' => '30',
+    'data-provide' => 'markdown',
+    'data-iconlibrary' => 'fa'
     ]) !!}
 </div>
-
-<div class="form-group">
-  {!! Form::submit($submit, ['class' => 'btn btn-primary']) !!}
-</div>
+<br>
+{!! Form::submit($submit, ['class' => 'button is-primary is-medium']) !!}
 
 
 <br>

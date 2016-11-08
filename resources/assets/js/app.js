@@ -19,5 +19,17 @@ const app = new Vue({
     el: '#app',
 
     created: function() {
+      $("#markdown").markdown({autofocus:false,savable:false});
+
+    },
+
+    methods: {
+      // method to toggle navigation hambuger
+      toggleNav: function() {
+
+        $('.nav-toggle').toggleClass('is-active');
+        $('.nav-menu').toggleClass('is-active');
+
+      }
     }
 });

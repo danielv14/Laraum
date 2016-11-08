@@ -5,7 +5,7 @@
 
 <body>
     <div id="app">
-        @include('partials.main-hero')
+        @include('partials.navbar')
 
         <div class="section">
           @yield('content')
