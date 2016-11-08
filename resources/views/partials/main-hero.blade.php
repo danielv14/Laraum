@@ -1,4 +1,4 @@
-<section class="hero">
+<section class="hero is-medium">
   <!-- Hero header: will stick at the top -->
   <div class="hero-head">
     @include('partials.navbar')
