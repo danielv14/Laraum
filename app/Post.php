@@ -17,7 +17,7 @@ class Post extends Model
     * @var array
     */
     protected $fillable = [
-      'id', 'title', 'likes', 'body'
+      'id', 'title', 'likes', 'body', 'draft'
     ];
 
     /**
@@ -66,5 +66,32 @@ class Post extends Model
     public function scopeCurrentUser($query, $id)
     {
       return $query->where('user_id', $id)->orderBy('created_at', 'desc');
+    }
+
+    /**
+    * Return all published posts
+    *
+    */
+    public function scopePublished($query)
+    {
+      return $query->where('draft', false);
+    }
+
+    /**
+    * Return all draft posts
+    *
+    */
+    public function scopeDraft($query)
+    {
+      return $query->where('draft', true);
+    }
+
+    /**
+    * Return all posts in descending order
+    * latest first
+    */
+    public function scopeLatest($query)
+    {
+      return $query->orderBy('created_at', 'desc');
     }
 }

@@ -41,12 +41,14 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
-
-        // create new Post
-        $post = new Post([
-          'title' => $request->title,
-          'body' => $request->body
-        ]);
+        $post = new Post;
+        $post->title = $request->title;
+        $post->body = $request->body;
+        if ($request->has('publish')) {
+          $post->draft = false;
+        } else if ($request->has('draft')) {
+          $post->draft = true;
+        }
 
         // save the post to authenticated user
         Auth::user()->posts()->save($post);
@@ -97,10 +99,27 @@ class PostController extends Controller
       $post = Post::findOrFail($id);
 
       if ($post->isOwner(Auth::user())) {
-        $post->user()
-          ->associate(Auth::user()->id)
-          ->update($request->all());
+
+        if ($request->has('publish')) {
+          $post->user()
+            ->associate(Auth::user()->id)
+            ->update([
+              'title' => $request->title,
+              'body' => $request->body,
+              'draft' => false
+            ]);
+        } else if ($request->has('draft')) {
+          $post->user()
+            ->associate(Auth::user()->id)
+            ->update([
+              'title' => $request->title,
+              'body' => $request->body,
+              'draft' => true
+            ]);
+          }
+
         return redirect('/');
+
       } else {
         return redirect('/');
       }

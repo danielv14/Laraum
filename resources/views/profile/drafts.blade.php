@@ -11,8 +11,8 @@
 
       <div class="column is-10">
         <div class="">
-          @if ($posts->count() != 0)
-            @foreach ($posts as $post)
+          @if ($drafts->count() != 0)
+            @foreach ($drafts as $post)
               <div class="section">
                 <h2 class="title">
                   {{ $post->title }}

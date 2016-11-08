@@ -15,7 +15,9 @@
     ]) !!}
 </div>
 <br>
-{!! Form::submit($submit, ['class' => 'button is-primary is-medium']) !!}
+{!! Form::submit($publish, ['class' => 'button is-primary is-medium', 'name' => 'publish']) !!}
+{!! Form::submit($draft, ['class' => 'button is-medium', 'name' => 'draft']) !!}
+
 
 
 <br>

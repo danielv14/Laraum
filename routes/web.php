@@ -13,6 +13,7 @@ Auth::routes();
 Route::group(['prefix' => 'profile'], function() {
 
   Route::get('/', 'ProfileController@index')->name('profile.index');
+  Route::get('/drafts', 'ProfileController@drafts')->name('profile.drafts');
 
   // CRUD Post
   Route::resource('post', 'PostController', [
