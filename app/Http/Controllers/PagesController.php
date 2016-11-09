@@ -12,8 +12,8 @@ class PagesController extends Controller
 {
     public function index()
     {
-      $posts = Post::orderBy('created_at', 'desc')->get();
-      $popular = Post::inRandomOrder()->take(4)->get();
+      $posts = Post::latest()->published()->get();
+      $popular = Post::published()->inRandomOrder()->take(4)->get();
       return view('pages.index', compact(['posts', 'popular']));
     }
 

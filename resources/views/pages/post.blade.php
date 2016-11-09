@@ -9,19 +9,14 @@
           <h4 class="subtitle">{{ $post->created_at->diffForHumans() }}</h4>
           @unless (Auth::guest())
             @if (Auth::user()->id == $post->user_id)
-              <div class="control is-grouped">
-                <p class="control">
-                  <a class="button" href="{{route('post.edit', $post->id)}}">Edit post</a>
-                </p>
-                <p class="control">
-                  {!! Form::open([
-                    'method' => 'DELETE',
-                    'route' => ['post.destroy', $post->id]
-                  ]) !!}
-                    {!! Form::submit('Delete', ['class' => 'button is-danger is-outlined']) !!}
-                  {!! Form::close() !!}
-                </p>
-              </div>
+              <a class="button" href="{{route('post.edit', $post->id)}}">Edit post</a>
+              <br><br>
+              {!! Form::open([
+                'method' => 'DELETE',
+                'route' => ['post.destroy', $post->id]
+              ]) !!}
+                {!! Form::submit('Delete', ['class' => 'button is-danger is-outlined']) !!}
+              {!! Form::close() !!}
             @endif
           @endunless
 

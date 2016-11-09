@@ -13,7 +13,16 @@ class ProfileController extends Controller
     public function index()
     {
       $user = Auth::user();
-      $posts = Post::currentUser($user->id)->get();
-      return view('profile.index', compact(['user', 'posts']));
+      $posts = Post::currentUser($user->id)->published()->get();
+      $drafts = Post::currentUser($user->id)->draft()->get();
+      return view('profile.index', compact(['user', 'posts', 'drafts']));
+    }
+
+    public function drafts()
+    {
+      $user = Auth::user();
+      $posts = Post::currentUser($user->id)->published()->get();
+      $drafts = Post::currentUser($user->id)->draft()->get();
+      return view('profile.drafts', compact(['user', 'posts', 'drafts']));
     }
 }

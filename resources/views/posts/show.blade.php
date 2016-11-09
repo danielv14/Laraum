@@ -4,27 +4,26 @@
 
 <div class="container">
   <div class="columns">
+
     <div class="column is-2">
-      <div class="control is-grouped">
-        <p class="control">
-          <a class="button" href="{{route('post.edit', $post->id)}}">Edit post</a>
-        </p>
-        <p class="control">
-          {!! Form::open([
-            'method' => 'DELETE',
-            'route' => ['post.destroy', $post->id]
-          ]) !!}
-            {!! Form::submit('Delete', ['class' => 'button is-danger is-outlined']) !!}
-          {!! Form::close() !!}
-        </p>
-      </div>
-
-
-
+      <a class="button" href="{{route('post.edit', $post->id)}}">Edit post</a>
+      <br><br>
+      {!! Form::open([
+        'method' => 'DELETE',
+        'route' => ['post.destroy', $post->id]
+      ]) !!}
+        {!! Form::submit('Delete', ['class' => 'button is-danger is-outlined']) !!}
+      {!! Form::close() !!}
     </div>
+
     <div class="column is-10">
       <div class="content post-content">
-        <h1>{{$post->title}}</h1>
+        <h1>
+          {{$post->title}}
+          @if ($post->draft == true)
+            <span class="tag is-light is-medium">Draft</span>
+          @endif
+        </h1>
         {!! Markdown::convertToHtml($post->body) !!}
       </div>
     </div>
