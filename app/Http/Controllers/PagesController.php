@@ -32,6 +32,7 @@ class PagesController extends Controller
     public function user($id)
     {
       $user = User::findOrFail($id);
-      return view('pages.user', compact('user'));
+      $posts = $user->posts()->published()->latest()->get();
+      return view('pages.user', compact(['user', 'posts']));
     }
 }

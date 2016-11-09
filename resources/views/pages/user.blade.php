@@ -13,7 +13,7 @@
       </div>
 
       <div class="column is-10">
-          @foreach ($user->posts as $post)
+          @foreach ($posts as $post)
             <div class="section">
               <h2 class="title">{{ $post->title }}</h2>
               <h4 class="subtitle">{{$post->created_at->diffForHumans()}}</h4>
