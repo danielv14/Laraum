@@ -2,7 +2,7 @@
   <p class="menu-label">My posts</p>
   <ul class="menu-list">
     <li><a class="{{ set_active_route('profile.index') }}" href="{{route('profile.index')}}">{{$posts->count()}} Published</a></li>
-    <li><a class="{{ set_active_route('profile.drafts') }}" href="{{route('profile.drafts')}}">{{$drafts->count()}} Drafts</a></li>
+    <li><a class="{{ set_active_route('profile.drafts') }}" href="{{route('profile.drafts')}}">{{ $drafts->count() }} {{ str_plural('Draft', $drafts->count()) }}</a></li>
     <li><a href="{{ route('post.create') }}">Create post</a></li>
 
   </ul>
