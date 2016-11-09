@@ -8,7 +8,7 @@
       <div class="column is-2">
         <div class="content">
           <h2 class="title">{{$user->name}}'s profile</h2>
-          <h4 class="subtitle">{{$user->posts->count()}} Posts</h4>
+          <h4 class="subtitle">{{$user->posts->count()}} {{ str_plural('Post', $user->posts->count()) }}</h4>
         </div>
       </div>
 
