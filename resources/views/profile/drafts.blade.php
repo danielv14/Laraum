@@ -32,7 +32,7 @@
 
             @endforeach
           @else
-            <p>You have not written any posts yet</p>
+            <p>You have drafts at this point</p>
           @endif
         </div>
 
