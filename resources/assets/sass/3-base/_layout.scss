@@ -2,7 +2,13 @@
   a {
     color: $brand-color !important;
     text-decoration: none !important;
+
+
   }
+}
+
+.content a:not(.button) {
+  border-bottom: none;
 }
 
 
