@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
 .btn {
   display: inline-block;
   margin-bottom: 0;
@@ -505,6 +505,7 @@ input[type="button"].btn-block {
   .md-editor > textarea {
     font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
     font-size: 14px;
+    line-height: 1.7rem;
     outline: 0;
     outline: thin dotted  \9;
     /* IE6-9 */
@@ -607,14 +608,19 @@ input[type="button"].btn-block {
   width: 100%;
   height: 100%; }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lato', sans-serif; }
+.brand-font {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; }
 
-p {
-  font-family: 'Open Sans', sans-serif; }
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400; }
+
+.button {
+  font-weight: 600; }
 
 h1, h2, h3, h4, h5, h6, p {
-  font-size: 1.2em;
+  font-size: 1.3em;
   line-height: 2.3rem; }
 
 .subtle-button {
@@ -624,6 +630,9 @@ h1, h2, h3, h4, h5, h6, p {
   color: #22D0B2 !important;
   text-decoration: none !important; }
 
+.content a:not(.button) {
+  border-bottom: none; }
+
 .section:first-of-type {
   padding-top: 0px; }
 
@@ -632,13 +641,24 @@ h1, h2, h3, h4, h5, h6, p {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(0, 0, 0, 0.09); }
 
+.section.nav-fix {
+  padding-top: 50px; }
+
 .nav {
   padding-top: 10px;
   padding-bottom: 10px; }
 
-@media screen and (max-width: 980px) {
-  .logo {
-    padding-left: 10px !important; } }
+.logo {
+  font-size: 1.6rem; }
+  @media screen and (max-width: 980px) {
+    .logo {
+      padding-left: 10px !important; } }
+
+.nav-item {
+  font-weight: 600; }
+
+.nav > .container > .nav-right > .nav-item:last-child:not(.is-tab) {
+  padding-right: 10px; }
 
 .footer.is-custom {
   background-color: #F5F5F5; }

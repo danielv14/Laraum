@@ -1,8 +1,8 @@
 <header class="nav">
   <div class="container">
     <div class="nav-left">
-      <a href="/" class="nav-item logo">
-        LARAUM
+      <a href="/" class="nav-item logo brand-font">
+        Laraum
       </a>
     </div>
     <span @click.prevent="toggleNav" class="nav-toggle">

@@ -4,7 +4,16 @@
 }
 
 .logo {
+  font-size: 1.6rem;
   @media screen and (max-width: 980px) {
     padding-left: 10px !important;
   }
+}
+
+.nav-item {
+  font-weight: 600;
+}
+
+.nav > .container > .nav-right > .nav-item:last-child:not(.is-tab) {
+  padding-right: 10px;
 }

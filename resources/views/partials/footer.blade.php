@@ -2,7 +2,7 @@
   <div class="container">
     <div class="content has-text-centered">
       <p>
-        <strong>Laraum</strong> is created by <a href="http://github.com/danielv14">Daniel</a>
+        <span class="brand-font">Laraum</span> is created by <a href="http://github.com/danielv14">Daniel</a>
       </p>
       <p>
         <a class="icon" href="http://github.com/danielv14/Laraum">
