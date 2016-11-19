@@ -728,7 +728,7 @@ h1, h2, h3, h4, h5, h6, p {
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.08);
   border: none; }
   .box .title {
-    padding-top: 15px; }
+    padding: 15px 0; }
 
 .section.nav-fix {
   padding-top: 50px; }
