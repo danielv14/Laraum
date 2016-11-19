@@ -14,7 +14,7 @@
 
       <div class="column is-10">
           @foreach ($posts as $post)
-            <div class="section">
+            <div class="section box">
               <h2 class="title">{{ $post->title }}</h2>
               <h4 class="subtitle">{{$post->created_at->diffForHumans()}}</h4>
               {!! str_limit(

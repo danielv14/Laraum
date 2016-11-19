@@ -13,7 +13,7 @@
         <div class="">
           @if ($drafts->count() != 0)
             @foreach ($drafts as $post)
-              <div class="section">
+              <div class="section box">
                 <h2 class="title">
                   {{ $post->title }}
                   @if ($post->draft == true)

@@ -725,8 +725,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 .box {
   background-color: white;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.09); }
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.08);
+  border: none; }
+  .box .title {
+    padding-top: 15px; }
 
 .section.nav-fix {
   padding-top: 50px; }

@@ -6,7 +6,7 @@
 
         <div class="column is-9">
           @foreach ($posts as $post)
-            <div class="section alignment-fix">
+            <div class="section alignment-fix box">
                 <h2 class="title">
                   {{$post->title}}
                 </h2>
