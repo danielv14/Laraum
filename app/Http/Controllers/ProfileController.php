@@ -22,6 +22,12 @@ class ProfileController extends Controller
     public function drafts()
     {
       $user = Auth::user();
+      $bookmarks = $user->bookmarks;
+      $posts = Post::currentUser($user->id)->published()->get();
+      $drafts = Post::currentUser($user->id)->draft()->get();
+      return view('profile.drafts', compact(['user', 'posts', 'drafts', 'bookmarks']));
+    }
+
     public function bookmarks()
     {
       $user = Auth::user();
