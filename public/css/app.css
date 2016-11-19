@@ -736,6 +736,12 @@ h1, h2, h3, h4, h5, h6, p {
 pre, code {
   border-radius: 3px; }
 
+.post {
+  margin-bottom: 15px; }
+
+.post-actions {
+  margin-top: 25px; }
+
 .nav {
   padding-top: 10px;
   padding-bottom: 10px; }

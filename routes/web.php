@@ -26,3 +26,7 @@ Route::group(['prefix' => 'profile'], function() {
 // Bookmarking routes
 Route::put('/bookmark', 'BookmarkController@store');
 Route::delete('/bookmark/{id}', 'BookmarkController@destroy');
+
+// Like routes
+Route::put('/like/{id}', 'LikesController@like');
+Route::put('/unlike/{id}', 'LikesController@unlike');

@@ -14,7 +14,8 @@ require('./bootstrap');
  */
 
 Vue.component('example', require('./components/Example.vue'));
-Vue.component('bookmark', require('./components/bookmark.vue'));
+Vue.component('bookmark', require('./components/Bookmark.vue'));
+Vue.component('like', require('./components/Like.vue'));
 
 const app = new Vue({
     el: '#app',
