@@ -28,6 +28,9 @@
                 <br>
                 <br>
                 <a class="button" href="{{route('post.show', $post->id)}}">View post</a>
+                <div class="is-pulled-right">
+                  @include('partials._bookmark')
+                </div>
               </div>
 
             @endforeach
