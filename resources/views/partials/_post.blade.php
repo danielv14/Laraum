@@ -1,3 +1,15 @@
+{{--
+
+  Post partial used inside $posts foreach loop
+  Using variables in include statement for hiding and showing
+  different parts of the partials
+
+  $subtitle [bool]     If subtitle should be displayed or not
+  $owner    [bool]     Display different text inside subtitle if user is owner of post
+  $postBtn  [string]   Button text for displaying post in its entierly
+
+ --}}
+
 <div class="section alignment-fix box">
     <h2 class="title">
       {{$post->title}}
