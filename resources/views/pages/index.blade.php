@@ -20,8 +20,8 @@
                           ) !!}
                 </div>
                 <br>
-                <a class="button" href="{{route('pages.post', $post->slug)}}">Read more</a>
-                <bookmark :post="{{ $post }}"></bookmark>
+                <a class="button" href="{{route('pages.post', $post->slug)}}">Read more...</a>
+                @include('partials._bookmark')
             </div>
           @endforeach
         </div>
