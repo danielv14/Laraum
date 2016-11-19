@@ -7,6 +7,7 @@
       <div class="column is-2">
           <h2 class="title">By <a href="{{route('pages.user', $post->user->id)}}">{{$post->user->name}}</a></h2>
           <h4 class="subtitle">{{ $post->created_at->diffForHumans() }}</h4>
+          @include('partials._bookmark')
           @unless (Auth::guest())
             @if (Auth::user()->id == $post->user_id)
               <a class="button" href="{{route('post.edit', $post->id)}}">Edit post</a>
