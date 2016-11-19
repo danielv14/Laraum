@@ -1,7 +1,7 @@
 <template lang="html">
     <a @click.prevent="bookmark" href="#">
       <i v-if="haveBookmarked" class="fa fa-bookmark" aria-hidden="true"></i>
-      <i v-else class="fa fa-bookmark-o" aria-hidden="true"></i>
+      <i v-else class="fa fa-bookmark-o no-bookmarked" aria-hidden="true"></i>
     </a>
 </template>
 
@@ -65,5 +65,8 @@ export default {
 </script>
 
 <style lang="css">
+  .no-bookmarked {
+    color: #b5b5b5;
+  }
 
 </style>
