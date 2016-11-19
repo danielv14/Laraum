@@ -21,6 +21,7 @@
                 </div>
                 <br>
                 <a class="button" href="{{route('pages.post', $post->slug)}}">Read more</a>
+                <bookmark :post="{{ $post }}"></bookmark>
             </div>
           @endforeach
         </div>
