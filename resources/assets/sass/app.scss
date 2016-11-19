@@ -10,6 +10,9 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_buttons";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_button-groups";
 
+// highlightjs theme
+@import "node_modules/highlight.js/styles/atom-one-light";
+
 
 // Bootstrap dependant lib-file Markdown library
 @import "1-libs/bootstrap-markdown";

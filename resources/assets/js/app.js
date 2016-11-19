@@ -19,8 +19,11 @@ const app = new Vue({
     el: '#app',
 
     created: function() {
+
       $("#markdown").markdown({autofocus:false,savable:false});
 
+      // init syntax highlighting
+      hljs.initHighlightingOnLoad();
     },
 
     methods: {

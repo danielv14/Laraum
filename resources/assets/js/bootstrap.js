@@ -13,6 +13,9 @@ require('bootstrap-sass');
 // require bootstrap markdown js file
 require('./markdown/bootstrap-markdown.js');
 
+// require highlight.js plugin for syntaz highlighting
+window.hljs = require('highlight.js');
+
 
 
 /**
