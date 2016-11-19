@@ -37,16 +37,13 @@
               $end = '...'
               ) !!}
     </div>
-    <br>
     <a class="button" href="{{route('pages.post', $post->slug)}}">{{$postBtn}}</a>
-    <br>
-    <br>
-    <p>
+    <div class="post-actions">
       <span class="is-pulled-left">
         @include('partials._like')
       </span>
       <div class="is-pulled-right">
         @include('partials._bookmark')
       </div>
-    </p>
+    </div>
 </div>
