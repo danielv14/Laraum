@@ -11,8 +11,8 @@
   border-bottom: none;
 }
 
-
-.section:first-of-type {
+// fix for aligning first post at same hight as the sidebar on front page
+.alignment-fix {
   padding-top: 0px;
 }
 

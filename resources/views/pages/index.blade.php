@@ -6,7 +6,7 @@
 
         <div class="column is-9">
           @foreach ($posts as $post)
-            <div class="section">
+            <div class="section alignment-fix">
                 <h2 class="title">
                   {{$post->title}}
                 </h2>
@@ -24,7 +24,7 @@
             </div>
           @endforeach
         </div>
-        
+
         <div class="column is-3 is-hidden-mobile">
           <div class="content box">
             <h2 class="title">Popular posts</h2>

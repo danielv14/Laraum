@@ -633,7 +633,7 @@ h1, h2, h3, h4, h5, h6, p {
 .content a:not(.button) {
   border-bottom: none; }
 
-.section:first-of-type {
+.alignment-fix {
   padding-top: 0px; }
 
 .box {
