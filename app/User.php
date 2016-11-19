@@ -34,4 +34,16 @@ class User extends Authenticatable
     {
       return $this->hasMany('App\Post');
     }
+
+
+    /**
+    * A user has many bookmarks
+    */
+    public function bookmarks()
+    {
+      return $this->belongstoMany('App\Post')
+        ->withTimestamps();
+    }
+
+
 }
