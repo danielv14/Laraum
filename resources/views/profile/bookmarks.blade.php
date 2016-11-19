@@ -13,22 +13,11 @@
         <div class="">
           @if ($bookmarks->count() != 0)
             @foreach ($bookmarks as $post)
-              <div class="section box">
-                <h2 class="title">
-                  {{ $post->title }}
-                </h2>
-                {!! str_limit(
-                  Markdown::convertToHtml($post->body),
-                  $limit = 450,
-                  $end = '...'
-                ) !!}
-                <br>
-                <br>
-                <a class="button" href="{{route('post.show', $post->id)}}">View post</a>
-                <div class="is-pulled-right">
-                  @include('partials._bookmark')
-                </div>
-              </div>
+              @include('partials._post', [
+                'subtitle' => true,
+                'postBtn' => 'View post',
+                'owner' => false
+              ])
 
             @endforeach
           @else
