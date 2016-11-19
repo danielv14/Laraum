@@ -21,7 +21,9 @@
                 </div>
                 <br>
                 <a class="button" href="{{route('pages.post', $post->slug)}}">Read more...</a>
-                @include('partials._bookmark')
+                <div class="is-pulled-right">
+                  @include('partials._bookmark')
+                </div>
             </div>
           @endforeach
         </div>
