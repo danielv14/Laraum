@@ -6,7 +6,7 @@
 
         <div class="column is-9">
           @foreach ($posts as $post)
-            <div class="section alignment-fix">
+            <div class="section alignment-fix box">
                 <h2 class="title">
                   {{$post->title}}
                 </h2>
@@ -20,7 +20,10 @@
                           ) !!}
                 </div>
                 <br>
-                <a class="button" href="{{route('pages.post', $post->slug)}}">Read more</a>
+                <a class="button" href="{{route('pages.post', $post->slug)}}">Read more...</a>
+                <div class="is-pulled-right">
+                  @include('partials._bookmark')
+                </div>
             </div>
           @endforeach
         </div>

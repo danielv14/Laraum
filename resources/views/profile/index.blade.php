@@ -13,7 +13,7 @@
         <div class="">
           @if ($posts->count() != 0)
             @foreach ($posts as $post)
-              <div class="section">
+              <div class="section box">
                 <h2 class="title">
                   {{ $post->title }}
                 </h2>
@@ -24,7 +24,10 @@
                 ) !!}
                 <br>
                 <br>
-                <a class="button" href="{{route('post.show', $post->id)}}">View post</a>
+                <a class="button" href="{{route('post.show', $post->id)}}">View Post</a>
+                <div class="is-pulled-right">
+                  @include('partials._bookmark')
+                </div>
               </div>
 
             @endforeach

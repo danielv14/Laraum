@@ -13,7 +13,7 @@
         <div class="">
           @if ($drafts->count() != 0)
             @foreach ($drafts as $post)
-              <div class="section">
+              <div class="section box">
                 <h2 class="title">
                   {{ $post->title }}
                   @if ($post->draft == true)
@@ -28,6 +28,9 @@
                 <br>
                 <br>
                 <a class="button" href="{{route('post.show', $post->id)}}">View post</a>
+                <div class="is-pulled-right">
+                  @include('partials._bookmark')
+                </div>
               </div>
 
             @endforeach
