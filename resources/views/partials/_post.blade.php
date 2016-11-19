@@ -39,7 +39,14 @@
     </div>
     <br>
     <a class="button" href="{{route('pages.post', $post->slug)}}">{{$postBtn}}</a>
-    <div class="is-pulled-right">
-      @include('partials._bookmark')
-    </div>
+    <br>
+    <br>
+    <p>
+      <span class="is-pulled-left">
+        @include('partials._like')
+      </span>
+      <div class="is-pulled-right">
+        @include('partials._bookmark')
+      </div>
+    </p>
 </div>
