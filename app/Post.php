@@ -94,4 +94,12 @@ class Post extends Model
     {
       return $query->orderBy('created_at', 'desc');
     }
+
+    /**
+    * Return posts in popular order
+    */
+    public function scopePopular($query)
+    {
+      return $query->orderBy('likes', 'desc');
+    }
 }
