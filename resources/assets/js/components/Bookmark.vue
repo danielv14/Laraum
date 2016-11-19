@@ -1,14 +1,8 @@
 <template lang="html">
-  <div class="buttons is-pulled-right">
-
     <a @click.prevent="bookmark" href="#">
       <i v-if="haveBookmarked" class="fa fa-bookmark" aria-hidden="true"></i>
       <i v-else class="fa fa-bookmark-o" aria-hidden="true"></i>
-
     </a>
-  </div>
-
-
 </template>
 
 <script>
