@@ -725,7 +725,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .box {
   background-color: white;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.08);
   border: none; }
   .box .title {
     padding-top: 15px; }
