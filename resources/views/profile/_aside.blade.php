@@ -1,4 +1,4 @@
-<aside class="menu">
+<aside class="menu box">
   <p class="menu-label">My posts</p>
   <ul class="menu-list">
     <li><a class="{{ set_active_route('profile.index') }}" href="{{route('profile.index')}}">{{$posts->count()}} Published</a></li>
