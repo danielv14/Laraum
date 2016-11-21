@@ -7,7 +7,7 @@
     <div id="app">
         @include('partials.main-hero')
 
-        <div class="section">
+        <div class="section content-wrapper">
           @yield('content')
         </div>
 

@@ -725,10 +725,15 @@ h1, h2, h3, h4, h5, h6, p {
 
 .box {
   background-color: white;
-  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.08);
   border: none; }
+  .box:not(:last-child) {
+    margin-bottom: 3rem; }
   .box .title {
     padding: 15px 0; }
+
+.content-wrapper {
+  background-color: #FBFBFB; }
 
 .section.nav-fix {
   padding-top: 50px; }
@@ -738,6 +743,13 @@ pre, code {
 
 .post {
   margin-bottom: 15px; }
+
+.post.post-segment {
+  color: gray; }
+
+.title a {
+  text-decoration: none;
+  color: #4a4a4a; }
 
 .post-actions {
   margin-top: 25px; }
@@ -759,7 +771,7 @@ pre, code {
   padding-right: 10px; }
 
 .footer.is-custom {
-  background-color: #F5F5F5; }
+  background-color: #FBFBFB; }
 
 .hero-title {
   font-size: 3rem; }

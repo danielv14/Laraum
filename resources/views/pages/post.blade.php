@@ -2,8 +2,7 @@
 
 @section('content')
   <div class="container">
-    <div class="columns">
-
+    <div class="columns box">
       <div class="column is-2">
           <h2 class="title">By <a href="{{route('pages.user', $post->user->id)}}">{{$post->user->name}}</a></h2>
           <h4 class="subtitle">{{ $post->created_at->diffForHumans() }}</h4>
@@ -22,14 +21,13 @@
               {!! Form::close() !!}
             @endif
           @endunless
-
       </div>
 
       <div class="column is-10">
-        <div class="content post">
+        <article class="content post">
           <h2>{{$post->title}}</h2>
           {!! Markdown::convertToHtml($post->body) !!}
-        </div>
+        </article>
       </div>
     </div>
 

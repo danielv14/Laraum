@@ -7,7 +7,7 @@
     <div id="app">
         @include('partials.navbar')
 
-        <div class="section nav-fix">
+        <div class="section nav-fix content-wrapper">
           @yield('content')
         </div>
 

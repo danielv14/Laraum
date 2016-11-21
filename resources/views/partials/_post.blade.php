@@ -10,9 +10,9 @@
 
  --}}
 
-<div class="section alignment-fix box">
+<article class="section alignment-fix box">
     <h2 class="title">
-      {{$post->title}}
+      <a href="{{route('pages.post', $post->slug)}}">{{$post->title}}</a>
     </h2>
       @if ($subtitle == true)
         <h4 class="subtitle">
@@ -30,7 +30,7 @@
           {{ $post->created_at->diffForHumans() }}</h4>
       @endif
 
-    <div class="post">
+    <div class="post post-segment">
       {!! str_limit(
               Markdown::convertToHtml($post->body),
               $limit = 450,
@@ -46,4 +46,4 @@
         @include('partials._bookmark')
       </div>
     </div>
-</div>
+</article>
