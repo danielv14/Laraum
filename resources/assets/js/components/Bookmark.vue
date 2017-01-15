@@ -64,9 +64,13 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="sass">
   .no-bookmarked {
     color: #b5b5b5;
+
+    &:hover {
+      color: #00D1B2;
+    }
   }
 
 </style>
