@@ -8,6 +8,7 @@
           <h4 class="subtitle">{{ $post->created_at->diffForHumans() }}</h4>
           <p>
             @include('partials._bookmark')
+            @include('partials._like')
           </p>
           @unless (Auth::guest())
             @if (Auth::user()->id == $post->user_id)
