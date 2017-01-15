@@ -6,6 +6,7 @@
 <body>
     <div id="app">
         @include('partials.navbar')
+        @include('partials.flash')
 
         <div class="section nav-fix content-wrapper">
           @yield('content')

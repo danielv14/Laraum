@@ -53,6 +53,11 @@ class PostController extends Controller
         // save the post to authenticated user
         Auth::user()->posts()->save($post);
 
+        // Flash session
+        session()->flash('flash_message', 'Post has been created');
+        session()->flash('alert-class', 'is-primary');
+
+
         return redirect('/');
     }
 
@@ -108,6 +113,8 @@ class PostController extends Controller
               'body' => $request->body,
               'draft' => false
             ]);
+            session()->flash('flash_message', 'Post has been updated');
+
         } else if ($request->has('draft')) {
           $post->user()
             ->associate(Auth::user()->id)
@@ -116,11 +123,18 @@ class PostController extends Controller
               'body' => $request->body,
               'draft' => true
             ]);
+            session()->flash('flash_message', 'Post has been updated as a draft');
+
           }
 
+        // Flash session
+        session()->flash('alert-class', 'is-primary');
         return redirect('/');
 
       } else {
+        // Flash session
+        session()->flash('flash_message', 'You are not the owner of that post');
+        session()->flash('alert-class', 'is-danger');
         return redirect('/');
       }
 
@@ -137,8 +151,15 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         if ($post->isOwner(Auth::user())) {
           $post->delete();
+          // Flash session
+          session()->flash('flash_message', 'Post has been deleted');
+          session()->flash('alert-class', 'is-primary');
+
           return redirect('/');
         } else {
+          // Flash session
+          session()->flash('flash_message', 'You are not the owner of that post');
+          session()->flash('alert-class', 'is-danger');
           return redirect('/');
         }
 
