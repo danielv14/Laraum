@@ -27,7 +27,9 @@
               @endif
             @endif
           @endif
-          {{ $post->created_at->diffForHumans() }}</h4>
+          <span class="time" title="{{$post->created_at}}">
+            {{ $post->created_at->diffForHumans() }}
+          </span></h4>
       @endif
 
     <div class="post post-segment">
