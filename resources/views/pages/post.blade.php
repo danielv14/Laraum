@@ -11,7 +11,13 @@
           </p>
           @unless (Auth::guest())
             @if (Auth::user()->id == $post->user_id)
-              <a class="button" href="{{route('post.edit', $post->id)}}">Edit post</a>
+              <a class="button" href="{{route('post.edit', $post->id)}}">
+                @if ($post->draft)
+                  Edit draft
+                @else
+                  Edit post
+                @endif
+              </a>
               <br><br>
               {!! Form::open([
                 'method' => 'DELETE',
