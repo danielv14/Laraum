@@ -21,7 +21,7 @@
 
             @endforeach
           @else
-            <p>You have drafts at this point</p>
+            <p>You have no drafts at this point</p>
           @endif
         </div>
 
