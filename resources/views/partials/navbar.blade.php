@@ -19,7 +19,7 @@
       @else
         <a class="nav-item" href="{{ route('profile.index') }}">Profile</a>
         <span class="nav-item">
-          <a href="{{ route('post.create') }}" class="button is-primary">
+          <a href="{{ route('post.create') }}" class="button is-primary is-outlined">
             <span>Create post</span>
           </a>
         </span>
