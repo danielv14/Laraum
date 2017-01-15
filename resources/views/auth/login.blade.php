@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-  <div class="column is-8 is-offset-2">
+  <div class="column box is-8 is-offset-2">
     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
         {{ csrf_field() }}
 
