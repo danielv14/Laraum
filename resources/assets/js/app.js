@@ -22,6 +22,8 @@ const app = new Vue({
 
     created: function() {
 
+      // call function that fades flash messages
+      this.fadeFlash();
       $("#markdown").markdown({autofocus:false,savable:false});
 
       // init syntax highlighting
@@ -31,10 +33,16 @@ const app = new Vue({
     methods: {
       // method to toggle navigation hambuger
       toggleNav: function() {
-
         $('.nav-toggle').toggleClass('is-active');
         $('.nav-menu').toggleClass('is-active');
-
-      }
+      },
+      // method to fade flash messages
+      fadeFlash: function () {
+        setTimeout(function() {
+          $('#flash').fadeOut('slow', function() {
+            $(this).remove();
+          })
+        }, 1500)
+      },
     }
 });

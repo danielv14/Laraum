@@ -6,7 +6,7 @@
 <body>
     <div id="app">
         @include('partials.main-hero')
-
+        @include('partials.flash')
         <div class="section content-wrapper">
           @yield('content')
         </div>
