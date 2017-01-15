@@ -12,8 +12,10 @@
     </span>
     <div class="nav-right nav-menu">
       @if (Auth::guest())
-        <a class="nav-item" href="{{ url('/login') }}">Login</a>
-        <a class="nav-item" href="{{ url('/register') }}">Register</a>
+        <a class="nav-item" href="{{ url('/login') }}">Log in</a>
+        <span class="nav-item">
+          <a class="button is-primary is-outlined" href="{{ url('/register') }}">Sign Up</a>
+        </span>
       @else
         <a class="nav-item" href="{{ route('profile.index') }}">Profile</a>
         <span class="nav-item">
