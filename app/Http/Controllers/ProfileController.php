@@ -12,11 +12,18 @@ class ProfileController extends Controller
 {
     public function index()
     {
+
       $user = Auth::user();
       $bookmarks = $user->bookmarks;
       $posts = Post::currentUser($user->id)->published()->get();
       $drafts = Post::currentUser($user->id)->draft()->get();
-      return view('profile.index', compact(['user', 'posts', 'drafts', 'bookmarks']));
+      return view('profile.index',
+              compact(['user',
+                      'posts',
+                      'drafts',
+                      'bookmarks'
+              ])
+            );
     }
 
     public function drafts()
@@ -25,7 +32,13 @@ class ProfileController extends Controller
       $bookmarks = $user->bookmarks;
       $posts = Post::currentUser($user->id)->published()->get();
       $drafts = Post::currentUser($user->id)->draft()->get();
-      return view('profile.drafts', compact(['user', 'posts', 'drafts', 'bookmarks']));
+      return view('profile.drafts',
+              compact(['user',
+                      'posts',
+                      'drafts',
+                      'bookmarks'
+              ])
+            );
     }
 
     public function bookmarks()
@@ -34,6 +47,12 @@ class ProfileController extends Controller
       $bookmarks = $user->bookmarks()->latest()->get();
       $posts = Post::currentUser($user->id)->published()->get();
       $drafts = Post::currentUser($user->id)->draft()->get();
-      return view('profile.bookmarks', compact(['user', 'posts', 'drafts', 'bookmarks']));
+      return view('profile.bookmarks',
+              compact(['user',
+                      'posts',
+                      'drafts',
+                      'bookmarks'
+              ])
+            );
     }
 }
