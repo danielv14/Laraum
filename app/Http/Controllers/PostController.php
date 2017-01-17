@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
-
 use Auth;
-
 use App\Post;
 
 class PostController extends Controller
@@ -100,11 +98,10 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, $id)
     {
-
       $post = Post::findOrFail($id);
-
+      // only let posts owner and logged in user update it
       if ($post->isOwner(Auth::user())) {
-
+        // update as post
         if ($request->has('publish')) {
           $post->user()
             ->associate(Auth::user()->id)
@@ -114,7 +111,7 @@ class PostController extends Controller
               'draft' => false
             ]);
             session()->flash('flash_message', 'Post has been updated');
-
+          // update as draft
         } else if ($request->has('draft')) {
           $post->user()
             ->associate(Auth::user()->id)
@@ -124,13 +121,13 @@ class PostController extends Controller
               'draft' => true
             ]);
             session()->flash('flash_message', 'Post has been updated as a draft');
-
           }
 
         // Flash session
         session()->flash('alert-class', 'is-primary');
         return redirect('/');
 
+        // if authenticated user doesnt own the post
       } else {
         // Flash session
         session()->flash('flash_message', 'You are not the owner of that post');
