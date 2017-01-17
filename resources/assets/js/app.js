@@ -13,7 +13,6 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
 Vue.component('bookmark', require('./components/Bookmark.vue'));
 Vue.component('like', require('./components/Like.vue'));
 
@@ -32,12 +31,12 @@ const app = new Vue({
 
     methods: {
       // method to toggle navigation hambuger
-      toggleNav: function() {
+      toggleNav() {
         $('.nav-toggle').toggleClass('is-active');
         $('.nav-menu').toggleClass('is-active');
       },
       // method to fade flash messages
-      fadeFlash: function () {
+      fadeFlash() {
         setTimeout(function() {
           $('#flash').fadeOut('slow', function() {
             $(this).remove();

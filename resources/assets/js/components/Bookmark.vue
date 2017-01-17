@@ -24,21 +24,19 @@ export default {
   },
   methods: {
 
-    bookmark: function() {
+    bookmark() {
 
       if (!this.haveBookmarked) {
-        console.log('creating bookmark');
         this.haveBookmarked = true;
         this.createBookmark();
       } else {
-        console.log('deleting bookmark');
         this.haveBookmarked = false;
         this.deleteBookmark();
       }
 
     },
 
-    createBookmark: function() {
+    createBookmark() {
 
       // store a data object to pass with the request to backend
       var data = {
@@ -52,7 +50,7 @@ export default {
       });
     },
 
-    deleteBookmark: function() {
+    deleteBookmark() {
       this.$http.delete('/bookmark/' + this.post.id).then((response) => {
 
       }, (response) => {

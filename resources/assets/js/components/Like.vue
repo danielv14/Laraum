@@ -30,7 +30,7 @@ export default {
 
   methods: {
 
-    like: function() {
+    like() {
       console.log('click click', this.post.id);
       if (!this.haveLiked) {
         this.increment(this.post.id);
@@ -47,7 +47,7 @@ export default {
     *
     * @param {id} id of the palette
     */
-    increment: function (id) {
+    increment(id) {
       // PUT request that iterates like value
       this.$http.put('/like/' + id).then((response) => {
             // toggle haveLiked state
@@ -60,7 +60,7 @@ export default {
            console.log('error');
          });
     },
-    decrement: function (id) {
+    decrement(id) {
       // PUT request that iterates like value
       this.$http.put('/unlike/' + id).then((response) => {
             // toggle haveLiked state
@@ -78,7 +78,7 @@ export default {
     *
     * @param {id} id of the palette in question
     */
-    getNrOfLikes: function(id) {
+    getNrOfLikes(id) {
       this.$http.get('/likes/' + id).then((response) => {
           // update nr of likes
            this.likes = response.body.likes;
